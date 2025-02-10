@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace ROMSystem
 {
-    public static class DataBase
+    public class BaseDB
     {
-        public static string ConnectionString = @"DataSource=ROM_SQL.sqlite";
+        public static string ConnectionString =  System.Configuration.ConfigurationManager.ConnectionStrings["SqlConnectionString"].ConnectionString;
 
         public static SqlSugarClient GetDB()
         {
@@ -19,7 +19,7 @@ namespace ROMSystem
                 ConnectionString = ConnectionString,
                 IsAutoCloseConnection = true,
             });
-            return db
+            return db;
         }
     }
 }
