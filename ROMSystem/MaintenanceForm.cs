@@ -9,7 +9,7 @@ public class MaintenanceForm
     /// ID
     /// </summary>
     [SugarColumn(IsPrimaryKey = true)] // 设置为主键，并自增
-    public int ID { get; set; }
+    public string ID { get; set; }
 
     /// <summary>
     /// 报修地址
